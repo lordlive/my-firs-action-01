@@ -38,3 +38,9 @@ jobs:
         with:
           name: ${{ env.ARTIFACT_NAME }}
           path: .
+  second:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Test Custom Action
+        uses: actions/checkout@v4
+        uses: lordlive/custom-action@main
