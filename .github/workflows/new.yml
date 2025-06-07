@@ -41,6 +41,7 @@ jobs:
   second:
     runs-on: ubuntu-latest
     steps:
-      - name: Test Custom Action
+      - name: Test
         uses: actions/checkout@v4
+      - name: Run Custom Action
         uses: lordlive/custom-action@main
