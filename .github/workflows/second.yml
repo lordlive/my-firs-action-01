@@ -9,7 +9,7 @@ env:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  first:
+  third:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
     environment: production/review
@@ -28,7 +28,7 @@ jobs:
           name: ${{ env.ARTIFACT_NAME }}
           path: .
 
-  second:
+  fourth:
     runs-on: ubuntu-latest
     environment: production/review
     steps:
