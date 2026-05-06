@@ -30,7 +30,7 @@ jobs:
         # Uses an action to check out your repository
         #
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       # Runs a single command using the runners shell
       - name: Upload artifact
@@ -43,6 +43,6 @@ jobs:
     environment: production
     steps:
       - name: Test
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
       - name: Run Custom Action
         uses: lordlive/custom-action@main
