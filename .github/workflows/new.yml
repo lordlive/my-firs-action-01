@@ -34,7 +34,9 @@ jobs:
       # Runs a single command using the runners shell
 
       - name: run_script
-        run: aws --version
+        run: |
+          aws --version
+          terraform --version
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4.6.2
