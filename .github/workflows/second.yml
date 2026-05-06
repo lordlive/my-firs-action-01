@@ -19,20 +19,20 @@ jobs:
         # Uses an action to check out your repository
         #
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       # Runs a single command using the runners shell
       - name: Upload artifact
-        uses: actions/upload-artifact@v4.6.2
+        uses: actions/upload-artifact@v7
         with:
           name: ${{ env.ARTIFACT_NAME }}
           path: .
 
-  fourth:
-    runs-on: ubuntu-latest
-    environment: production/review
-    steps:
-      - name: Test
-        uses: actions/checkout@v4
-      - name: Run Custom Action
-        uses: lordlive/custom-action@main
+  # fourth:
+  #   runs-on: ubuntu-latest
+  #   environment: production/review
+  #   steps:
+  #     - name: Test
+  #       uses: actions/checkout@v6
+  #     - name: Run Custom Action
+  #       uses: lordlive/custom-action@main
