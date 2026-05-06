@@ -32,16 +32,21 @@ jobs:
         uses: actions/checkout@v6
 
       # Runs a single command using the runners shell
+
+      - name: run_script
+        run: aws --version
+
       - name: Upload artifact
         uses: actions/upload-artifact@v4.6.2
         with:
           name: ${{ env.ARTIFACT_NAME }}
           path: .
-  second:
-    runs-on: ubuntu-latest
-    environment: production
-    steps:
-      - name: Test
-        uses: actions/checkout@v6
-      - name: Run Custom Action
-        uses: lordlive/custom-action@main
+
+  # second:
+  #   runs-on: ubuntu-latest
+  #   environment: production
+  #   steps:
+  #     - name: Test
+  #       uses: actions/checkout@v6
+  #     - name: Run Custom Action
+  #       uses: lordlive/custom-action@main
