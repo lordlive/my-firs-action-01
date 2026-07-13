@@ -6,9 +6,8 @@ name: new
 on:
   # Triggers the workflow on push or pull request events but only for the "main" branch
   push:
-    branches: [ "rc-*" ]
-  pull_request:
-    branches: [ "main" ]
+  # pull_request:
+  #   branches: [ "main" ]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -30,19 +29,25 @@ jobs:
         # Uses an action to check out your repository
         #
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       # Runs a single command using the runners shell
+
+      - name: run_script
+        run: |
+          aws --version
+
       - name: Upload artifact
-        uses: actions/upload-artifact@v4.6.2
+        uses: actions/upload-artifact@v7
         with:
           name: ${{ env.ARTIFACT_NAME }}
           path: .
-  second:
-    runs-on: ubuntu-latest
-    environment: production
-    steps:
-      - name: Test
-        uses: actions/checkout@v4
-      - name: Run Custom Action
-        uses: lordlive/custom-action@main
+
+  # second:
+  #   runs-on: ubuntu-latest
+  #   environment: production
+  #   steps:
+  #     - name: Test
+  #       uses: actions/checkout@v6
+  #     - name: Run Custom Action
+  #       uses: lordlive/custom-action@main
